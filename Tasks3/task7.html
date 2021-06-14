@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>task 7 Karagishiev</title>
+        <style>
+            #inputDiv{
+                background-color: gray;
+                width: 200px;
+            }
+            button{
+                background-color: lightcyan;
+            }
+            #savedDivs{
+                background-color: gray;
+                width: 200px;
+            }
+            #savedNums{
+                background-color: gray;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "inputDiv">
+            <p>Вводи число</p>
+            <input type="text" id="inputI" value="">
+            <button onclick="save()">Ввод</button>
+        </div>
+        <div id = "savedDivs">
+            <p>Сохраненные числа</p>
+            <p id="savedNums"></p>
+            <button onClick="clearString()">Очистить</button>
+        </div>
+        <script>
+            function save(){
+                document.getElementById("savedNums").innerHTML += document.getElementById("inputI").value + "<br>";
+                document.getElementById("inputI").value = "";
+            }
+            function clearString(){
+                document.getElementById("savedNums").innerHTML = "";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tesr</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function work1() {
+			alert("dsf");
+		    var s1 = document.getElementById('input1').value;
+		    var s2 = s1.plit(' ');
+		    var longestWord = 0;
+		    for (var i = 0; i < s2[i].length; i++) {
+		        if (s2[i].length > longestWord) {
+		            longestWord = s2[i].length;
+		        }
+		    }
+		    document.getElementById('span2').innerHTML = longestWord;
+		}
+	</script>
+	<input type="text" size="40" id="input1">
+	<button  onclick="work1()">Кнопка</button>
+	<span id = "span2"></span>
+</body>
+</html>

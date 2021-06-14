@@ -1,0 +1,107 @@
+<html>
+
+<head>
+	<title>
+		Karagishiev jquery
+	</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+
+	<style>
+		table {
+			margin: 25px 0;
+			width: 100px;
+		}
+
+		table th,
+		table td {
+			text-align: center;
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid;
+		}
+	</style>
+</head>
+
+<body>
+
+	<button class="add-row">
+		+
+	</button>
+	<button class="sumer">
+		S
+	</button>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Наименование</th>
+				<th>Кол-во</th>
+				<th>Цена</th>
+				<th>Сумма</th>
+				<th>Операция</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type='text' class=''></td>
+				<td><input type='text' class='typer'></td>
+				<td><input type='text' class='typer'></td>
+				<td>
+					<p class="sumText">123</p>
+				</td>
+				<td style='display: flex;'>
+					<button class='remove-row'>remove-row</button>
+					<button class='remove-row'>remove-row</button>
+					<button class='remove-row'>remove-row</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<h1>Итого : 0</h1>
+	<script>
+		//Adding Elements
+		function ss(val) {
+			// console.log($((val.parentElement.parentElement).children().children('.dd'))).get(0).nodeName);
+		}
+
+		var c = 0;
+		$(document).ready(function () {
+			element_html = "<tr><td><input type='text'></td><td><input type='text' class='typer'></td><td><input type='text' class='typer'></td><td><p class='sumText'>123</p></td><td style='display: flex;'><button class='remove-row'>remove-row</button><button class='close-row'>close-row</button><button class='enable-row'>enable-row</button></td></tr>"; // Element to add
+			$(".add-row").click(function () {
+				var tableBody = $("table tbody");
+				$(".remove-row").unbind('click');
+				$(document).on('click', '.remove-row', function () {
+					$(this).parent().parent().remove();
+				});
+				$(document).on('click', '.close-row', function () {
+					$(this).parent().parent().find('input').prop('disabled', true);
+				});
+				$(document).on('click', '.enable-row', function () {
+					$(this).parent().parent().find('input').prop('disabled', false);
+				});
+				$(document).on('input', '.typer', function(){
+					var t = $(this).parent().parent().find('.typer');
+					console.log($(t[0]).val());
+					$(this).parent().parent().find('p').text($(t[0]).val()*$(t[1]).val());
+				})
+				tableBody.append(element_html);
+			})
+			$(".sumer").click(function(){
+				var t = $('p');
+				var f = 0;
+				for(var i = 0; i<t.length;i++){
+					console.log(t[i].textContent);
+					f += parseInt(t[i].textContent); 
+				}
+				$('h1').text(f);
+			})
+		})
+	</script>
+</body>
+
+</html>

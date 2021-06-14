@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>task 6с-d Karagishiev</title>
+    <style>
+        table{
+            visibility: hidden;
+        }
+        img {
+            width: 60px;
+            height: 60px;
+        }
+
+        #fcolumn {
+            margin-right: 30px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="Ivname" value="">
+    <input type="text" id="Ifname" value="">
+    <input type="text" id="Iemail" value="">
+    <input type="text" id="Ignumber" value="">
+    <input type="text" id="Iname" value="">
+    <input type="text" id="Iphone" value="">
+    <button onclick="func()">Визитка</button>
+    <table border="1" id="t">
+        <tr>
+            <td id="logo"><img src="https://www.rea.ru/ru/Documents/simvolika/Gerb.png"></td>
+            <td>
+                <table>
+                    <td>
+                        <div id="fcolumn">
+                            <p id="vname">РЭУ им. Плеханова</p>
+                            <p id="fname">Фамилия</p>
+                            <p id="email">Email</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="scolumn">
+                            <p id="gnumber">Номер группы</p>
+                            <p id="name">имя</p>
+                            <p id="phone">телефон</p>
+                        </div>
+                    </td>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function func(){
+        document.getElementById("vname").innerText = document.getElementById("Ivname").value;
+        document.getElementById("fname").innerText = document.getElementById("Ifname").value;
+        document.getElementById("email").innerText = document.getElementById("Iemail").value;
+        document.getElementById("gnumber").innerText = document.getElementById("Ignumber").value;
+        document.getElementById("name").innerText = document.getElementById("Iname").value;
+        document.getElementById("phone").innerText = document.getElementById("Iphone").value;
+        document.getElementById("t").style.visibility = "visible";
+        }
+    </script>
+</body>
+</html>

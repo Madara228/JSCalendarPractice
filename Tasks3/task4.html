@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>task4</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            // Используя JavaScript поместить в переменную произвольную строку текста и создать из этой строки новую по следующему алгоритму:
+            // 1)	Первый символ исходной строки и один пробел
+            // 2)	Два символа исходной строки начиная с символа 2 и 2 точки
+            // 3)	Три символа исходной строки начиная с символа 4 и 3 точки
+            // 4)	и т.п. до конца строки
+
+            var str = "kurohitsugi";
+            var _s = "";
+            var currentIndex = 0;
+            var current_count = 0;
+            for(let i=0;i<str.length;i++){
+                current_count+=1;
+                _s += str.substring(i,i+current_count);
+                for(let j=0;j<current_count;j++){
+                    _s += ".";
+                }
+                i+=current_count-1;
+            }
+            alert(_s);
+        </script>
+    </body>
+</html>

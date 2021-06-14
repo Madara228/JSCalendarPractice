@@ -1,0 +1,84 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+a {
+  text-decoration: none;
+}
+
+nav {
+  font-family: monospace;
+}
+
+ul {
+  background: darkorange;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  width: 250px
+}
+
+li {
+	display: block;
+  	color: #fff;
+  	background: darkorange;
+  	float: top;
+	padding: 1rem;
+	position: relative;
+	text-decoration: none;
+	transition-duration: 0.5s;
+}
+.ad_li{
+	width: 1000px;
+}
+.dropdiv{
+	display: flex;
+}
+.dropdiv .ddropdiv{
+	flex-direction: column;
+}
+  
+li a {
+  color: #fff;
+  font-family: "Ubuntu";
+}
+
+li:hover,
+li:focus-within {
+  background: orange;
+  cursor: pointer;
+}
+
+li:focus-within a {
+  outline: none;
+}
+
+ul li ul {
+  background: darkorange;
+  visibility: hidden;
+  opacity: 0;
+  /*min-width: 5rem;*/
+  position: absolute;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  left: 250px;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+   visibility: visible;
+   opacity: 1;
+   display: block;
+}
+
+ul li ul li {
+  clear: top;
+}
